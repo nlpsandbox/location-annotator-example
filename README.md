@@ -1,4 +1,4 @@
-# NLP Sandbox Person Name Annotator Example
+# NLP Sandbox Physical Address Annotator Example
 
 [![GitHub CI](https://img.shields.io/github/workflow/status/Sage-Bionetworks/nlp-sandbox-physical-address-annotator-example/ci.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/Sage-Bionetworks/nlp-sandbox-physical-address-annotator-example)
 [![GitHub Release](https://img.shields.io/github/release/Sage-Bionetworks/nlp-sandbox-physical-address-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/Sage-Bionetworks/nlp-sandbox-physical-address-annotator-example/releases)
