@@ -7,12 +7,10 @@ from typing import List, Dict  # noqa: F401
 
 from openapi_server.models.base_model_ import Model
 from openapi_server.models.annotation import Annotation
-from openapi_server.models.physical_address_annotation_all_of import PhysicalAddressAnnotationAllOf
 from openapi_server.models.user import User
 from openapi_server import util
 
 from openapi_server.models.annotation import Annotation  # noqa: E501
-from openapi_server.models.physical_address_annotation_all_of import PhysicalAddressAnnotationAllOf  # noqa: E501
 from openapi_server.models.user import User  # noqa: E501
 
 class PhysicalAddressAnnotation(Model):
