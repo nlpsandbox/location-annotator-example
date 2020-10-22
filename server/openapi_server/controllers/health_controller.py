@@ -15,6 +15,6 @@ def health():  # noqa: E501
 
     :rtype: Health
     """
-    success = { 'status' : 'pass' }
+    success = {'status': 'pass'}
 
     return jsonify(success)
