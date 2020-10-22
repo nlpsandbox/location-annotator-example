@@ -40,11 +40,12 @@ def physical_addresses_read_all(note=None):  # noqa: E501
     # 2019-08-24T14:15:22Z
     formatted_time = currenttime.strftime("%Y-%m-%d %H:%M:%S%Z")
     if connexion.request.is_json:
-        notes = [Note.from_dict(d) for d in connexion.request.get_json()]  # noqa: E501
+        notes = [Note.from_dict(d) for d in connexion.request.get_json()]
         for note in notes:
             if (note._text is None):
-                failure['detail'] = "A Note is missing the required text field"
-                return Response(json.dumps(failure), status=400, mimetype='application/json')
+                failure['detail'] = "Note is missing in required text field"
+                return Response(json.dumps(failure), status=400,
+                                mimetype='application/json')
                 # return jsonify(failure)
 
             # Match on contry name list
