@@ -46,9 +46,8 @@ def physical_addresses_read_all(note=None):  # noqa: E501
                 failure['detail'] = "Note is missing in required text field"
                 return Response(json.dumps(failure), status=400,
                                 mimetype='application/json')
-                # return jsonify(failure)
 
-            # Match on contry name list
+            # Matches on country name list
             for country in countries:
                 matches = re.finditer(country, note._text, re.IGNORECASE)
                 for match in matches:
@@ -60,16 +59,16 @@ def physical_addresses_read_all(note=None):  # noqa: E501
                         'created_at': formatted_time,
                         'type': "Country"
                     })
-            # Match on 5 digit ZIP code
-            match = re.finditer(
+            # Matches on 5 digit ZIP code
+            matches = re.finditer(
                 '\\b([0-9][0-9][0-9][1-9][1-9])\\b',
                 note._text)
-            for m in match:
+            for match in matches:
                 return_list.append({
                     'noteId': note._id,
-                    'text': m[0],
-                    'start': m.start(),
-                    'length': len(m[0]),
+                    'text': match[0],
+                    'start': match.start(),
+                    'length': len(match[0]),
                     'created_at': formatted_time,
                     'type': "Zip"
                 })
