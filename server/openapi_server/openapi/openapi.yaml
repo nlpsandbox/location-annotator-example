@@ -52,7 +52,7 @@ paths:
       - Health
       x-openapi-router-controller: openapi_server.controllers.health_controller
   /physical-addresses:
-    get:
+    post:
       description: Returns the physical address annotations
       operationId: physical_addresses_read_all
       requestBody:
@@ -149,7 +149,7 @@ components:
             text:
               description: The content of the note
               type: string
-              example: 'On 09-03-1999, Ms Chloe Price met with Dr Joe.'
+              example: 'The Patient lives in Milwaukee in the 53227 Area code. Formally they lived in Barbados.'
             type:
               description: The note type
               type: string
