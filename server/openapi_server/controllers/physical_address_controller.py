@@ -8,7 +8,8 @@ import json
 from flask import Response
 
 from openapi_server.models.note import Note  # noqa: E501
-from openapi_server.models.physical_address_annotation import PhysicalAddressAnnotation  # noqa: E501
+from openapi_server.models.physical_address_annotation import \
+    PhysicalAddressAnnotation  # noqa: E501
 from openapi_server import util
 
 
@@ -60,11 +61,16 @@ def physical_addresses_read_all(note=None):  # noqa: E501
                 return Response(json.dumps(failure), status=400,
                                 mimetype='application/json')
 
-            add_type_to_return_list(cities, formatted_time, note, return_list, "City")
-            add_type_to_return_list(countries, formatted_time, note, return_list, "Country")
-            add_type_to_return_list(others, formatted_time, note, return_list, "Other")
-            add_type_to_return_list(states, formatted_time, note, return_list, "State")
-            add_type_to_return_list(streets, formatted_time, note, return_list, "Street")
+            add_type_to_return_list(cities, formatted_time, note, return_list,
+                                    "City")
+            add_type_to_return_list(countries, formatted_time, note,
+                                    return_list, "Country")
+            add_type_to_return_list(others, formatted_time, note, return_list,
+                                    "Other")
+            add_type_to_return_list(states, formatted_time, note, return_list,
+                                    "State")
+            add_type_to_return_list(streets, formatted_time, note, return_list,
+                                    "Street")
 
             # Matches on 5 digit ZIP code
             matches = re.finditer(
@@ -83,7 +89,8 @@ def physical_addresses_read_all(note=None):  # noqa: E501
     return jsonify(return_list)
 
 
-def add_type_to_return_list(countries, formatted_time, note, return_list, type):
+def add_type_to_return_list(countries, formatted_time, note, return_list,
+                            type):
     # Matches on country name list
     for country in countries:
         matches = re.finditer(country, note._text, re.IGNORECASE)
