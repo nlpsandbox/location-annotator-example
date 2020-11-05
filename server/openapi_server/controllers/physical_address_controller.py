@@ -32,8 +32,21 @@ def physical_addresses_read_all(note=None):  # noqa: E501
     # Pulled this list from
     # https://raw.githubusercontent.com/datasets/country-list/master/data.csv
 
+    df = pd.read_csv("data/city_list.csv")
+    cities = df['City'].str.lower().unique().tolist()
+
     df = pd.read_csv("data/country_list.csv")
     countries = df['Name'].str.lower().unique().tolist()
+
+    df = pd.read_csv("data/other_list.csv")
+    others = df['Other'].str.lower().unique().tolist()
+
+    df = pd.read_csv("data/state_list.csv")
+    states = df['State'].str.lower().unique().tolist()
+
+    df = pd.read_csv("data/street_list.csv")
+    streets = df['Street'].str.lower().unique().tolist()
+
     return_list = []
     tz_NY = pytz.timezone('Etc/Greenwich')
     currenttime = datetime.now(tz=tz_NY)
@@ -47,18 +60,12 @@ def physical_addresses_read_all(note=None):  # noqa: E501
                 return Response(json.dumps(failure), status=400,
                                 mimetype='application/json')
 
-            # Matches on country name list
-            for country in countries:
-                matches = re.finditer(country, note._text, re.IGNORECASE)
-                for match in matches:
-                    return_list.append({
-                        'noteId': note._id,
-                        'text': match[0],
-                        'start': match.start(),
-                        'length': len(match[0]),
-                        'created_at': formatted_time,
-                        'type': "Country"
-                    })
+            add_type_to_return_list(cities, formatted_time, note, return_list, "City")
+            add_type_to_return_list(countries, formatted_time, note, return_list, "Country")
+            add_type_to_return_list(others, formatted_time, note, return_list, "Other")
+            add_type_to_return_list(states, formatted_time, note, return_list, "State")
+            add_type_to_return_list(streets, formatted_time, note, return_list, "Street")
+
             # Matches on 5 digit ZIP code
             matches = re.finditer(
                 '\\b([0-9][0-9][0-9][1-9][1-9])\\b',
@@ -74,3 +81,18 @@ def physical_addresses_read_all(note=None):  # noqa: E501
                 })
 
     return jsonify(return_list)
+
+
+def add_type_to_return_list(countries, formatted_time, note, return_list, type):
+    # Matches on country name list
+    for country in countries:
+        matches = re.finditer(country, note._text, re.IGNORECASE)
+        for match in matches:
+            return_list.append({
+                'noteId': note._id,
+                'text': match[0],
+                'start': match.start(),
+                'length': len(match[0]),
+                'created_at': formatted_time,
+                'type': type
+            })
