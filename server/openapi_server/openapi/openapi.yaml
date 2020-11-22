@@ -149,7 +149,7 @@ components:
             text:
               description: The content of the note
               type: string
-              example: 'The Patient lives in Milwaukee in the 53227 Area code. Formally they lived in Barbados.'
+              example: 'The Patient lives in Anchorage at 08 Doncaster Drive in the 53227 Area code. Formally they lived in Barbados and New york, long island.'
             type:
               description: The note type
               type: string
