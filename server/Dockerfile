@@ -20,7 +20,7 @@ RUN apt-get update -qq -y \
 # Copy server files
 COPY data ${APP_DIR}/data
 COPY openapi_server ${APP_DIR}/openapi_server
-COPY requirements.txt app.ini ${APP_DIR}/
+COPY requirements.txt uwsgi.ini ${APP_DIR}/
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 
