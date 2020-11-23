@@ -98,7 +98,7 @@ components:
         noteType: loinc:LP29684-5
         patientId: 507f1f77bcf86cd799439011
         id: id
-        text: This is the content of a clinical note.
+        text: The Patient lives in Anchorage at 08 Doncaster Drive in the 53227 Area code. Formally they lived in Barbados and New york, long island.
       properties:
         id:
           description: The ID of the note
@@ -152,7 +152,7 @@ components:
     TextPhysicalAddressAnnotations:
       description: A list of text physical address annotations
       example:
-        textDateAnnotations:
+        textPhysicalAddressAnnotations:
         - start: 42
           length: 11
           text: Seattle
@@ -162,7 +162,7 @@ components:
           text: Seattle
           addressType: city
       properties:
-        textDateAnnotations:
+        textPhysicalAddressAnnotations:
           description: A list of text physical address annotations
           items:
             $ref: '#/components/schemas/TextPhysicalAddressAnnotation'

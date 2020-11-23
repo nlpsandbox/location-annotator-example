@@ -17,21 +17,21 @@ class TextPhysicalAddressAnnotations(Model):
     Do not edit the class manually.
     """
 
-    def __init__(self, text_date_annotations=None):  # noqa: E501
+    def __init__(self, text_physical_address_annotations=None):  # noqa: E501
         """TextPhysicalAddressAnnotations - a model defined in OpenAPI
 
-        :param text_date_annotations: The text_date_annotations of this TextPhysicalAddressAnnotations.  # noqa: E501
-        :type text_date_annotations: List[TextPhysicalAddressAnnotation]
+        :param text_physical_address_annotations: The text_physical_address_annotations of this TextPhysicalAddressAnnotations.  # noqa: E501
+        :type text_physical_address_annotations: List[TextPhysicalAddressAnnotation]
         """
         self.openapi_types = {
-            'text_date_annotations': List[TextPhysicalAddressAnnotation]
+            'text_physical_address_annotations': List[TextPhysicalAddressAnnotation]
         }
 
         self.attribute_map = {
-            'text_date_annotations': 'textDateAnnotations'
+            'text_physical_address_annotations': 'textPhysicalAddressAnnotations'
         }
 
-        self._text_date_annotations = text_date_annotations
+        self._text_physical_address_annotations = text_physical_address_annotations
 
     @classmethod
     def from_dict(cls, dikt) -> 'TextPhysicalAddressAnnotations':
@@ -45,24 +45,24 @@ class TextPhysicalAddressAnnotations(Model):
         return util.deserialize_model(dikt, cls)
 
     @property
-    def text_date_annotations(self):
-        """Gets the text_date_annotations of this TextPhysicalAddressAnnotations.
+    def text_physical_address_annotations(self):
+        """Gets the text_physical_address_annotations of this TextPhysicalAddressAnnotations.
 
         A list of text physical address annotations  # noqa: E501
 
-        :return: The text_date_annotations of this TextPhysicalAddressAnnotations.
+        :return: The text_physical_address_annotations of this TextPhysicalAddressAnnotations.
         :rtype: List[TextPhysicalAddressAnnotation]
         """
-        return self._text_date_annotations
+        return self._text_physical_address_annotations
 
-    @text_date_annotations.setter
-    def text_date_annotations(self, text_date_annotations):
-        """Sets the text_date_annotations of this TextPhysicalAddressAnnotations.
+    @text_physical_address_annotations.setter
+    def text_physical_address_annotations(self, text_physical_address_annotations):
+        """Sets the text_physical_address_annotations of this TextPhysicalAddressAnnotations.
 
         A list of text physical address annotations  # noqa: E501
 
-        :param text_date_annotations: The text_date_annotations of this TextPhysicalAddressAnnotations.
-        :type text_date_annotations: List[TextPhysicalAddressAnnotation]
+        :param text_physical_address_annotations: The text_physical_address_annotations of this TextPhysicalAddressAnnotations.
+        :type text_physical_address_annotations: List[TextPhysicalAddressAnnotation]
         """
 
-        self._text_date_annotations = text_date_annotations
+        self._text_physical_address_annotations = text_physical_address_annotations
