@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.note import Note  # noqa: E501
+from openapi_server.models.text_physical_address_annotation_request import TextPhysicalAddressAnnotationRequest  # noqa: E501
 from openapi_server.models.text_physical_address_annotation import TextPhysicalAddressAnnotation  # noqa: E501
 from openapi_server.models.text_physical_address_annotations import TextPhysicalAddressAnnotations  # noqa: E501
 
@@ -43,7 +43,8 @@ def create_text_physical_address_annotations(note=None):  # noqa: E501
     status = None
     if connexion.request.is_json:
         try:
-            note = Note.from_dict(connexion.request.get_json())  # noqa: E501
+            annotation_request = TextPhysicalAddressAnnotationRequest.from_dict(connexion.request.get_json())  # noqa: E501
+            note = annotation_request._note
             annotations = []
 
             for street in data._streets:
