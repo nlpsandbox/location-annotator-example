@@ -127,7 +127,7 @@ components:
           noteType: loinc:LP29684-5
           patientId: 507f1f77bcf86cd799439011
           id: id
-          text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott.
+          text: The Patient lives in Anchorage at 08 Doncaster Drive in the 53227 Area code. Formally they lived in Barbados and New york, long island.
       properties:
         note:
           $ref: '#/components/schemas/Note'
