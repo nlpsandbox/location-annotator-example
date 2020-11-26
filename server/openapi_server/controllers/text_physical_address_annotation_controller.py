@@ -3,7 +3,6 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.note import Note  # noqa: E501
 from openapi_server.models.text_physical_address_annotation_request import TextPhysicalAddressAnnotationRequest  # noqa: E501
 from openapi_server.models.text_physical_address_annotation import TextPhysicalAddressAnnotation  # noqa: E501
 from openapi_server.models.text_physical_address_annotations import TextPhysicalAddressAnnotations  # noqa: E501
