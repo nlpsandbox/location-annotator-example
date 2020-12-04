@@ -4,12 +4,8 @@ from __future__ import absolute_import
 import unittest
 
 from flask import json
-from six import BytesIO
 
-from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.text_physical_address_annotation_request import TextPhysicalAddressAnnotationRequest  # noqa: E501
-from openapi_server.models.text_physical_address_annotations import TextPhysicalAddressAnnotations  # noqa: E501
-from openapi_server.test import BaseTestCase
+from openapi_server.test.integration import BaseTestCase
 
 
 class TestTextPhysicalAddressAnnotationController(BaseTestCase):
@@ -21,12 +17,12 @@ class TestTextPhysicalAddressAnnotationController(BaseTestCase):
         Annotate physical addresses in a clinical note
         """
         text_physical_address_annotation_request = {
-  "note" : {
-    "noteType" : "loinc:LP29684-5",
-    "patientId" : "507f1f77bcf86cd799439011",
-    "text" : "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott."
-  }
-}
+            "note": {
+                "noteType": "loinc:LP29684-5",
+                "patientId": "507f1f77bcf86cd799439011",
+                "text": "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott."
+            }
+        }
         headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
