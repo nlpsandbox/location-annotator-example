@@ -126,7 +126,7 @@ components:
         note:
           noteType: loinc:LP29684-5
           patientId: 507f1f77bcf86cd799439011
-          id: id
+          # id: id
           text: The Patient lives in Anchorage at 08 Doncaster Drive in the 53227 Area code. Formally they lived in Barbados and New york, long island.
       properties:
         note:
