@@ -12,7 +12,7 @@ def service():  # noqa: E501
     service = Service(
         name="physical-address-annotator-example",
         version="0.2.1",
-        license="Apache-2.0",
+        license="apache-2.0",
         repository="github:nlpsandbox/physical-address-annotator-example",
         description="An example implementation of the NLP Sandbox " +
                     "Physical Address Annotator API",
