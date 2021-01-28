@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   physical-address-annotator:
-    image: nlpsandbox/physical-address-annotator-example:latest
+    image: nlpsandbox/physical-address-annotator-example:0.3.1
     build:
       context: server
       dockerfile: Dockerfile
