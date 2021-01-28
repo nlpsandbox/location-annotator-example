@@ -29,13 +29,10 @@ class Data:
 data = Data()
 
 
-def create_text_physical_address_annotations(note=None):  # noqa: E501
+def create_text_physical_address_annotations():  # noqa: E501
     """Annotate physical addresses in a clinical note
 
     Return the physical addresse annotations found in a clinical note # noqa: E501
-
-    :param note:
-    :type note: dict | bytes
 
     :rtype: TextPhysicalAddressAnnotations
     """
@@ -77,7 +74,6 @@ def create_text_physical_address_annotations(note=None):  # noqa: E501
         except Exception as error:
             status = 500
             res = Error("Internal error", status, str(error))
-
     return res, status
 
 
