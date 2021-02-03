@@ -1,17 +1,12 @@
 version: "3.8"
 
 services:
-  nlp-tool:
+  physical-address-annotator:
     image: nlpsandbox/physical-address-annotator-example:0.3.2
     build:
       context: server
       dockerfile: Dockerfile
     container_name: physical-address-annotator
-    healthcheck:
-      test: curl --fail http://localhost:8080/api/v1/healthCheck
-      interval: 10s
-      timeout: 5s
-      retries: 5
     networks:
       - nlp-sandbox-internal
 
