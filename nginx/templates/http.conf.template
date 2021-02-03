@@ -1,6 +1,6 @@
 http {
     upstream tool {
-        server ${SERVER_HOST}:${SERVER_PORT};
+        server ${TOOL_HOST}:${TOOL_PORT};
         keepalive 15;
     }
 

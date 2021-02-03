@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  physical-address-annotator:
+  nlp-tool:
     image: nlpsandbox/physical-address-annotator-example:0.3.2
     build:
       context: server
@@ -20,8 +20,8 @@ services:
     container_name: physical-address-annotator-nginx
     restart: always
     environment:
-      - SERVER_HOST=physical-address-annotator
-      - SERVER_PORT=8080
+      - TOOL_HOST=physical-address-annotator
+      - TOOL_PORT=8080
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/templates:/etc/nginx/templates:ro
