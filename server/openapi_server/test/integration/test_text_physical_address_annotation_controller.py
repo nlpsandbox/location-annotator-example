@@ -21,7 +21,7 @@ class TestTextPhysicalAddressAnnotationController(BaseTestCase):
                 "noteType": "loinc:LP29684-5",
                 "patientId": "507f1f77bcf86cd799439011",
                 "id": "507f1f77bcf86cd799439011",
-                "text": "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott."
+                "text": "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle."
             }
         }
         headers = {
