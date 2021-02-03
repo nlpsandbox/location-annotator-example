@@ -12,7 +12,7 @@ def get_tool():  # noqa: E501
     """
     tool = Tool(
         name="physical-address-annotator-example",
-        version="0.3.1",
+        version="0.3.2",
         license="apache-2.0",
         repository="github:nlpsandbox/physical-address-annotator-example",
         description="An example implementation of the NLP Sandbox Physical " +
