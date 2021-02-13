@@ -64,5 +64,7 @@ class TextPhysicalAddressAnnotations(Model):
         :param text_physical_address_annotations: The text_physical_address_annotations of this TextPhysicalAddressAnnotations.
         :type text_physical_address_annotations: List[TextPhysicalAddressAnnotation]
         """
+        if text_physical_address_annotations is None:
+            raise ValueError("Invalid value for `text_physical_address_annotations`, must not be `None`")  # noqa: E501
 
         self._text_physical_address_annotations = text_physical_address_annotations

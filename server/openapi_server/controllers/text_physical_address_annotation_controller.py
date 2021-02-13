@@ -89,5 +89,5 @@ def add_annotations(annotations, matches, address_type):
                 length=len(match[0]),
                 text=match[0],
                 address_type=address_type,
-                confidence=95
+                confidence=95.5
             ))

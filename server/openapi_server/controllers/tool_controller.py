@@ -21,7 +21,8 @@ def get_tool():  # noqa: E501
         author="The NLP Sandbox Team",
         author_email="thomas.schaffter@sagebionetworks.org",
         url="https://github.com/nlpsandbox/physical-address-annotator-example",
-        tool_type="nlpsandbox:physical-address-annotator"
+        tool_type="nlpsandbox:physical-address-annotator",
+        tool_api_version="1.0.0"
     )
     return tool, 200
 
