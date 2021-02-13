@@ -5,7 +5,7 @@ import unittest
 
 from flask import json
 
-from openapi_server.test import BaseTestCase
+from openapi_server.test.integration import BaseTestCase
 
 
 class TestTextPhysicalAddressAnnotationController(BaseTestCase):
@@ -18,9 +18,9 @@ class TestTextPhysicalAddressAnnotationController(BaseTestCase):
         """
         text_physical_address_annotation_request = {
             "note": {
+                "identifier": "awesome-note",
                 "noteType": "loinc:LP29684-5",
-                "patientId": "507f1f77bcf86cd799439011",
-                "id": "507f1f77bcf86cd799439011",
+                "patientId": "awesome-patient",
                 "text": "On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle."  # noqa: E501
             }
         }
