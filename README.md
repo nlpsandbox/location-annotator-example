@@ -58,7 +58,7 @@ Annotator.
 Install and start the Physical Address Annotator.
 
     cd server/
-    pip install -r requirements.txt
+    pip install -e .
     python -m openapi_server
 
 ### Accessing the UI
