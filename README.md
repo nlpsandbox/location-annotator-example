@@ -24,8 +24,9 @@ physical address annotations found in the clinical note.
 
 ## Model
 
-This NLP tool relies on simple regular expressions to identify the location of
-date strings in a clinical note.
+This NLP tool relies on dictionaries of streets, cities, (US) states, and
+countries to identify the location of physical address strings in a clinical
+note.
 
 This implementation is provided as an example that Developers can use to quick
 start the development of a new model by creating a repository from this [GitHub
