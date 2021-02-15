@@ -6,7 +6,13 @@ info:
     url: https://nlpsandbox.io
   description: |
     # Overview
-    This NLP tool detects references of physical addresses in the clinical note given as input and returns a list of physical address annotations.
+
+    This NLP tool detects references of physical addresses in the clinical note
+    given as input and returns a list of physical address annotations.
+
+    # Examples
+
+    - [NLP Sandbox Physical Address Annotator (Python)](https://github.com/nlpsandbox/physical-address-annotator-example)
   license:
     name: Apache 2.0
     url: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/LICENSE
@@ -67,7 +73,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TextPhysicalAddressAnnotations'
+                $ref: '#/components/schemas/TextPhysicalAddressAnnotationResponse'
           description: Success
         "400":
           content:
@@ -247,7 +253,7 @@ components:
       - text
       type: object
     TextPhysicalAddressAnnotationRequest:
-      description: An annotation request
+      description: A request to annotate physical addresses in a clinical note
       example:
         note:
           identifier: awesome-note
@@ -300,8 +306,8 @@ components:
         addressType: city
         confidence: 95.5
       type: object
-    TextPhysicalAddressAnnotations:
-      description: A list of text physical address annotations
+    TextPhysicalAddressAnnotationResponse:
+      description: The response to a physical addresses annotation request
       example:
         textPhysicalAddressAnnotations:
         - start: 42
@@ -316,7 +322,7 @@ components:
           confidence: 95.5
       properties:
         textPhysicalAddressAnnotations:
-          description: A list of text physical address annotations
+          description: A list of physical address annotations
           items:
             $ref: '#/components/schemas/TextPhysicalAddressAnnotation'
           type: array
