@@ -5,7 +5,7 @@ import re
 from openapi_server.models.error import Error  # noqa: E501
 from openapi_server.models.text_physical_address_annotation_request import TextPhysicalAddressAnnotationRequest  # noqa: E501
 from openapi_server.models.text_physical_address_annotation import TextPhysicalAddressAnnotation  # noqa: E501
-from openapi_server.models.text_physical_address_annotations import TextPhysicalAddressAnnotations  # noqa: E501
+from openapi_server.models.text_physical_address_annotation_response import TextPhysicalAddressAnnotationResponse  # noqa: E501
 
 
 class Data:
@@ -34,7 +34,7 @@ def create_text_physical_address_annotations():  # noqa: E501
 
     Return the physical addresse annotations found in a clinical note # noqa: E501
 
-    :rtype: TextPhysicalAddressAnnotations
+    :rtype: TextPhysicalAddressAnnotationResponse
     """
     res = None
     status = None
@@ -44,6 +44,7 @@ def create_text_physical_address_annotations():  # noqa: E501
             note = annotation_request._note
             annotations = []
 
+            # TODO: Add data sources
             for street in data._streets:
                 matches = re.finditer(
                     r'\b({})\b'.format(street), note._text, re.IGNORECASE)
@@ -69,7 +70,7 @@ def create_text_physical_address_annotations():  # noqa: E501
                     r'\b({})\b'.format(other), note._text, re.IGNORECASE)
                 add_annotations(annotations, matches, 'other')
 
-            res = TextPhysicalAddressAnnotations(annotations)
+            res = TextPhysicalAddressAnnotationResponse(annotations)
             status = 200
         except Exception as error:
             status = 500
