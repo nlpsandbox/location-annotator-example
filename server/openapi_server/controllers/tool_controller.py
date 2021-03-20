@@ -13,7 +13,7 @@ def get_tool():  # noqa: E501
     """
     tool = Tool(
         name="physical-address-annotator-example",
-        version="1.0.1",
+        version="1.0.2",
         license=License.APACHE_2_0,
         repository="github:nlpsandbox/physical-address-annotator-example",
         description="Example implementation of the NLP Sandbox Physical " +
@@ -21,8 +21,8 @@ def get_tool():  # noqa: E501
         author="The NLP Sandbox Team",
         author_email="thomas.schaffter@sagebionetworks.org",
         url="https://github.com/nlpsandbox/physical-address-annotator-example",
-        tool_type="nlpsandbox:physical-address-annotator",
-        tool_api_version="1.0.1"
+        type="nlpsandbox:physical-address-annotator",
+        api_version="1.0.2"
     )
     return tool, 200
 
