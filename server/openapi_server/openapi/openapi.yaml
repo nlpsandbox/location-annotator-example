@@ -26,7 +26,7 @@ info:
     name: Apache 2.0
     url: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/LICENSE
   title: NLP Sandbox Physical Address Annotator API
-  version: 1.0.1
+  version: 1.0.2
   x-logo:
     url: https://nlpsandbox.github.io/nlpsandbox-schemas/logo.png
 servers:
@@ -232,7 +232,7 @@ components:
       example:
         identifier: awesome-note
         text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle.
-        noteType: loinc:LP29684-5
+        type: loinc:LP29684-5
         patientId: awesome-patient
       properties:
         identifier:
@@ -245,7 +245,7 @@ components:
         text:
           description: The content of the clinical note
           type: string
-        noteType:
+        type:
           description: The note type (LOINC concept)
           type: string
         patientId:
@@ -257,9 +257,9 @@ components:
           type: string
       required:
       - identifier
-      - noteType
       - patientId
       - text
+      - type
       type: object
     TextPhysicalAddressAnnotationRequest:
       description: A request to annotate physical addresses in a clinical note
@@ -267,7 +267,7 @@ components:
         note:
           identifier: awesome-note
           text: On 12/26/2020, Ms. Chloe Price met with Dr. Prescott in Seattle.
-          noteType: loinc:LP29684-5
+          type: loinc:LP29684-5
           patientId: awesome-patient
       properties:
         note:
@@ -397,8 +397,8 @@ components:
         author: Awesome Team
         authorEmail: author@example.com
         url: https://example.com
-        toolType: nlpsandbox:date-annotator
-        toolApiVersion: 1.0.1
+        type: nlpsandbox:date-annotator
+        apiVersion: 1.0.2
       properties:
         name:
           description: The tool name
@@ -431,27 +431,27 @@ components:
           description: The URL to the homepage of the tool
           format: uri
           type: string
-        toolType:
+        type:
           description: The type of this tool
           example: nlpsandbox:date-annotator
           maxLength: 60
           minLength: 3
           pattern: ^[a-z0-9]+(?:-[a-z0-9]+)*(:)[a-z0-9]+(?:-[a-z0-9]+)*$
           type: string
-        toolApiVersion:
+        apiVersion:
           description: The version of the tool OpenAPI specification
           minLength: 1
           pattern: ^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$
           type: string
       required:
+      - apiVersion
       - author
       - authorEmail
       - description
       - license
       - name
       - repository
-      - toolApiVersion
-      - toolType
+      - type
       - url
       - version
       type: object
@@ -467,8 +467,8 @@ components:
           author: Awesome Team
           authorEmail: author@example.com
           url: https://example.com
-          toolType: nlpsandbox:date-annotator
-          toolApiVersion: 1.0.1
+          type: nlpsandbox:date-annotator
+          apiVersion: 1.0.2
         - name: awesome-nlp-tool
           version: 1.0.6
           license: apache-2.0
@@ -477,8 +477,8 @@ components:
           author: Awesome Team
           authorEmail: author@example.com
           url: https://example.com
-          toolType: nlpsandbox:date-annotator
-          toolApiVersion: 1.0.1
+          type: nlpsandbox:date-annotator
+          apiVersion: 1.0.2
       properties:
         toolDependencies:
           description: A list of tools
