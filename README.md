@@ -53,7 +53,7 @@ You can stop the container run with `Ctrl+C`, followed by `docker-compose down`.
 We recommend using a Conda environment to install and run the Physical Address
 Annotator.
 
-    conda create --name physical-address-annotator python=3.9.1
+    conda create --name physical-address-annotator python=3.9.4
     conda activate physical-address-annotator
 
 Install and start the Physical Address Annotator.
