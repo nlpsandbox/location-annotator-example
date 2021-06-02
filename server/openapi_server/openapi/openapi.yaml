@@ -27,7 +27,7 @@ info:
     name: Apache 2.0
     url: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/LICENSE
   title: NLP Sandbox Physical Address Annotator API
-  version: 1.1.1
+  version: 1.1.2
   x-logo:
     url: https://nlpsandbox.github.io/nlpsandbox-schemas/logo.png
 servers:
@@ -411,7 +411,7 @@ components:
         authorEmail: author@example.com
         url: https://example.com
         type: nlpsandbox:date-annotator
-        apiVersion: 1.1.1
+        apiVersion: 1.1.2
       properties:
         name:
           description: The tool name
@@ -482,7 +482,7 @@ components:
           authorEmail: author@example.com
           url: https://example.com
           type: nlpsandbox:date-annotator
-          apiVersion: 1.1.1
+          apiVersion: 1.1.2
         - name: awesome-nlp-tool
           version: 1.0.6
           license: apache-2.0
@@ -492,7 +492,7 @@ components:
           authorEmail: author@example.com
           url: https://example.com
           type: nlpsandbox:date-annotator
-          apiVersion: 1.1.1
+          apiVersion: 1.1.2
       properties:
         tools:
           description: A list of tools

@@ -19,8 +19,8 @@ physical address annotations found in the clinical note.
 
 ### Specification
 
-- Physical Address Annotator API version: 1.1.1
-- Tool version: 1.1.1
+- Physical Address Annotator API version: 1.1.2
+- Tool version: 1.1.2
 - Docker image: [nlpsandbox/physical-address-annotator-example]
 
 ## Model
