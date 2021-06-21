@@ -1,10 +1,10 @@
 [![nlpsandbox.io](https://nlpsandbox.github.io/nlpsandbox-themes/banner/Banner@3x.png)](https://nlpsandbox.io)
 
-# NLP Sandbox Physical Address Annotator Example
+# NLP Sandbox Location Annotator Example
 
-[![GitHub Release](https://img.shields.io/github/release/nlpsandbox/physical-address-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/physical-address-annotator-example/releases)
-[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/physical-address-annotator-example/CI.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/physical-address-annotator-example/actions)
-[![GitHub License](https://img.shields.io/github/license/nlpsandbox/physical-address-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/physical-address-annotator-example/blob/develop/LICENSE)
+[![GitHub Release](https://img.shields.io/github/release/nlpsandbox/location-annotator-example.svg?include_prereleases&color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/location-annotator-example/releases)
+[![GitHub CI](https://img.shields.io/github/workflow/status/nlpsandbox/location-annotator-example/CI.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/location-annotator-example/actions)
+[![GitHub License](https://img.shields.io/github/license/nlpsandbox/location-annotator-example.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/nlpsandbox/location-annotator-example/blob/develop/LICENSE)
 [![Docker](https://img.shields.io/badge/docker-blue.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=nlpsandbox&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMy4yIDcuOS0xLjctMXYxMS40bDkuOSA1LjdWMTIuNkw1LjYgOS4zIDMuMiA3Ljl6bTE3LjEtMS4zIDEuNS0uOUwxMiAwIDIuMiA1LjdsMi42IDEuNS4xLjEgMS43IDEgNS41IDMuMiA1LjEtMyAzLjEtMS45ek0xMiA5LjUgOS4zIDcuOSA3LjQgNi44bC0xLjctMS0uMS0uMWgtLjFMMTIgMS45bDYuNSAzLjhMMTYuMyA3IDEyIDkuNXptOC44LTEuNi0yLjQgMS40LS41LjItNS4zIDMuMVYyNGw5LjktNS43VjYuOWwtMS43IDF6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)](https://www.synapse.org/#!Synapse:syn25830546 "Get the Docker image of this tool on NLPSandbox.io")
 [![Leaderboard](https://img.shields.io/badge/leaderboard-blue.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=nlpsandbox&logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMy4yIDcuOS0xLjctMXYxMS40bDkuOSA1LjdWMTIuNkw1LjYgOS4zIDMuMiA3Ljl6bTE3LjEtMS4zIDEuNS0uOUwxMiAwIDIuMiA1LjdsMi42IDEuNS4xLjEgMS43IDEgNS41IDMuMiA1LjEtMyAzLjEtMS45ek0xMiA5LjUgOS4zIDcuOSA3LjQgNi44bC0xLjctMS0uMS0uMWgtLjFMMTIgMS45bDYuNSAzLjhMMTYuMyA3IDEyIDkuNXptOC44LTEuNi0yLjQgMS40LS41LjItNS4zIDMuMVYyNGw5LjktNS43VjYuOWwtMS43IDF6IiBmaWxsPSIjZmZmIi8+PC9zdmc+)](https://www.synapse.org/#!Synapse:syn22277123/wiki/609143 "View the performance of this tool on NLPSandbox.io")
 [![Discord](https://img.shields.io/discord/770484164393828373.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=Discord&logo=discord)](https://nlpsandbox.io/discord "Realtime support / chat with the community and the team")
@@ -16,14 +16,14 @@ processing (NLP) tools on both public and private datasets. Academics, students,
 and industry professionals are invited to browse the available tasks and
 participate by developing and submitting an NLP Sandbox tool.
 
-This repository provides an example implementation of the [NLP Sandbox Physical
-Address Annotator API] written in Python-Flask. An NLP Sandbox physical address
-annotator takes as input a clinical note (text) and outputs a list of predicted
-physical address annotations found in the clinical note. Here physicall
-addresses are identified using dictionaries.
+This repository provides an example implementation of the [NLP Sandbox Location
+Annotator API] written in Python-Flask. An NLP Sandbox location annotator takes
+as input a clinical note (text) and outputs a list of predicted location
+annotations found in the clinical note. Here physicall locations are identified
+using dictionaries.
 
 This tool is provided to NLP developers who develop in Python as a starting
-point to package their own physical address annotator as an NLP Sandbox tool
+point to package their own location annotator as an NLP Sandbox tool
 (see section [Development](#Development)). This section also describes how to
 generate a tool "stub" using [openapi-generator] for 50+ programming
 languages-frameworks. This repository includes a GitHub CI/CD workflow that
@@ -64,7 +64,7 @@ performance!
 
 - NLP Sandbox schemas version: 1.1.2
 - NLP Sandbox tool version: 1.1.2
-- Docker image: [docker.synapse.org/syn22277123/physical-address-annotator-example]
+- Docker image: [docker.synapse.org/syn22277123/location-annotator-example]
 
 
 ## Requirements
@@ -76,7 +76,7 @@ performance!
 
 ### Running with Docker
 
-The command below starts this NLP Sandbox physical address annotator locally.
+The command below starts this NLP Sandbox location annotator locally.
 
 ```console
 docker compose up --build
@@ -89,11 +89,11 @@ You can stop the container run with `Ctrl+C`, followed by `docker compose down`.
 Create a Conda environment.
 
 ```console
-conda create --name physical-address-annotator python=3.9
-conda activate physical-address-annotator
+conda create --name location-annotator python=3.9
+conda activate location-annotator
 ```
 
-Install and start this NLP Sandbox physical address annotator.
+Install and start this NLP Sandbox location annotator.
 
 ```console
 cd server && pip install -r requirements.txt
@@ -114,10 +114,10 @@ the tool using Docker (production) or Python (development).
 
 ## Development
 
-This section describes how to develop your own NLP Sandbox physical address
+This section describes how to develop your own NLP Sandbox location
 annotator in Python-Flask and other programming languages-frameworks. This
 example tool is also available in Java in the GitHub repository
-[nlpsandbox/physical-address-annotator-example-java].
+[nlpsandbox/location-annotator-example-java].
 
 ### Development requirements
 
@@ -177,9 +177,9 @@ disabling version updates].
 
 The development of new NLP Sandbox tools is streamlined by using the
 [openapi-generator] to generate tool "stubs" for more than 50 programming
-languages and frameworks. Here a physical address annotator stub refers to an
+languages and frameworks. Here a location annotator stub refers to an
 initial implementation that has been automatically generated by
-[openapi-generator] from the [NLP Sandbox Physical Address Annotator API]
+[openapi-generator] from the [NLP Sandbox Location Annotator API]
 specification.
 
 Run the command below to get the list of languages-framework supported by the
@@ -189,7 +189,7 @@ Run the command below to get the list of languages-framework supported by the
 npx @openapitools/openapi-generator-cli list
 ```
 
-Generate the physical address annotator stub from an empty GitHub repository
+Generate the location annotator stub from an empty GitHub repository
 (here in Python-Flask):
 
 ```console
@@ -197,15 +197,15 @@ mkdir server
 npx @openapitools/openapi-generator-cli generate \
   -g python-flask \
   -o server \
-  -i https://nlpsandbox.github.io/nlpsandbox-schemas/physical-address-annotator/latest/openapi.json
+  -i https://nlpsandbox.github.io/nlpsandbox-schemas/location-annotator/latest/openapi.json
 ```
 
 where the option `-i` refers to the OpenAPI specification of the [NLP Sandbox
-Physical Address Annotator API].
+Location Annotator API].
 
 The URL is composed of different elements:
 
-- `physical-address-annotator` - The type of NLP Sandbox tool to generate. The
+- `location-annotator` - The type of NLP Sandbox tool to generate. The
   list of all the NLP Sandbox tool types available is defined in the [NLP
   Sandbox schemas].
 - `latest` - The latest stable version of the [NLP Sandbox schemas]. This token
@@ -332,11 +332,11 @@ Thinking about contributing to this project? Get started by reading our
 <!-- Links -->
 
 [nlpsandbox.io]: https://www.synapse.org/nlpsandbox
-[docker.synapse.org/syn22277123/physical-address-annotator-example]: https://www.synapse.org/#!Synapse:syn25828638
+[docker.synapse.org/syn22277123/location-annotator-example]: https://www.synapse.org/#!Synapse:syn25828638
 [Synapse.org]: https://synapse.org
 [openapi-generator]: https://github.com/OpenAPITools/openapi-generator
 [contribution guide]: .github/CONTRIBUTING.md
-[Apache License 2.0]: https://github.com/nlpsandbox/physical-address-annotator-example/blob/main/LICENSE
+[Apache License 2.0]: https://github.com/nlpsandbox/location-annotator-example/blob/main/LICENSE
 [Docker Engine]: https://docs.docker.com/engine/install/
 [Node]: https://nodejs.org/en/
 [Java]: https://www.java.com/en/download/help/download_options.html
@@ -352,9 +352,9 @@ Thinking about contributing to this project? Get started by reading our
 [Enabling and disabling version updates]: https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-version-updates
 [NLP Sandbox schemas]: https://github.com/nlpsandbox/nlpsandbox-schemas
 [nlpsandbox/nlpsandbox-schemas]: https://github.com/nlpsandbox/nlpsandbox-schemas
-[NLP Sandbox Physical Address Annotator API]: https://nlpsandbox.github.io/nlpsandbox-schemas/physical-address-annotator/latest/docs/
-[this GitHub template]: https://github.com/nlpsandbox/physical-address-annotator-example/generate
-[nlpsandbox/physical-address-annotator-example-java]: https://github.com/nlpsandbox/physical-address-annotator-example-java
+[NLP Sandbox Location Annotator API]: https://nlpsandbox.github.io/nlpsandbox-schemas/location-annotator/latest/docs/
+[this GitHub template]: https://github.com/nlpsandbox/location-annotator-example/generate
+[nlpsandbox/location-annotator-example-java]: https://github.com/nlpsandbox/location-annotator-example-java
 [Patient schema]: https://github.com/nlpsandbox/nlpsandbox-schemas/blob/develop/openapi/commons/components/schemas/Patient.yaml
 [semantic versioning]: https://semver.org/
 [NLP Sandbox schemas CHANGELOG]: .github/CHANGELOG.md
