@@ -19,8 +19,8 @@ participate by developing and submitting an NLP Sandbox tool.
 This repository provides an example implementation of the [NLP Sandbox Location
 Annotator API] written in Python-Flask. An NLP Sandbox location annotator takes
 as input a clinical note (text) and outputs a list of predicted location
-annotations found in the clinical note. Here physicall locations are identified
-using dictionaries.
+annotations found in the clinical note. Here locations are identified using
+dictionaries.
 
 This tool is provided to NLP developers who develop in Python as a starting
 point to package their own location annotator as an NLP Sandbox tool
