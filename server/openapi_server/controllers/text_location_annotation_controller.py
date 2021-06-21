@@ -3,6 +3,7 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
+from openapi_server.models.text_location_annotation import TextLocationAnnotation  # noqa: E501
 from openapi_server.models.text_location_annotation_request import TextLocationAnnotationRequest  # noqa: E501
 from openapi_server.models.text_location_annotation_response import TextLocationAnnotationResponse  # noqa: E501
 
@@ -80,7 +81,7 @@ def create_text_location_annotations():  # noqa: E501
     return res, status
 
 
-    def add_annotations(annotations, matches, location_type):
+def add_annotations(annotations, matches, location_type):
     """
     Converts matches to TextLocationAnnotation objects and adds them
     to the annotations array specified.
@@ -94,4 +95,3 @@ def create_text_location_annotations():  # noqa: E501
                 location_type=location_type,
                 confidence=95.5
             ))
-
