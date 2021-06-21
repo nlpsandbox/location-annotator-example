@@ -3,9 +3,9 @@ import pandas as pd
 import re
 
 from openapi_server.models.error import Error  # noqa: E501
-from openapi_server.models.text_physical_address_annotation_request import TextPhysicalAddressAnnotationRequest  # noqa: E501
-from openapi_server.models.text_physical_address_annotation import TextPhysicalAddressAnnotation  # noqa: E501
-from openapi_server.models.text_physical_address_annotation_response import TextPhysicalAddressAnnotationResponse  # noqa: E501
+from openapi_server.models.text_location_annotation import TextLocationAnnotation  # noqa: E501
+from openapi_server.models.text_location_annotation_request import TextLocationAnnotationRequest  # noqa: E501
+from openapi_server.models.text_location_annotation_response import TextLocationAnnotationResponse  # noqa: E501
 
 
 class Data:
@@ -29,18 +29,21 @@ class Data:
 data = Data()
 
 
-def create_text_physical_address_annotations():  # noqa: E501
-    """Annotate physical addresses in a clinical note
+def create_text_location_annotations():  # noqa: E501
+    """Annotate locations in a clinical note
 
-    Return the physical addresse annotations found in a clinical note # noqa: E501
+    Return the location annotations found in a clinical note # noqa: E501
 
-    :rtype: TextPhysicalAddressAnnotationResponse
+    :param text_location_annotation_request:
+    :type text_location_annotation_request: dict | bytes
+
+    :rtype: TextLocationAnnotationResponse
     """
     res = None
     status = None
     if connexion.request.is_json:
         try:
-            annotation_request = TextPhysicalAddressAnnotationRequest.from_dict(connexion.request.get_json())  # noqa: E501
+            annotation_request = TextLocationAnnotationRequest.from_dict(connexion.request.get_json())  # noqa: E501
             note = annotation_request._note
             annotations = []
 
@@ -70,7 +73,7 @@ def create_text_physical_address_annotations():  # noqa: E501
                     r'\b({})\b'.format(other), note._text, re.IGNORECASE)
                 add_annotations(annotations, matches, 'other')
 
-            res = TextPhysicalAddressAnnotationResponse(annotations)
+            res = TextLocationAnnotationResponse(annotations)
             status = 200
         except Exception as error:
             status = 500
@@ -78,17 +81,17 @@ def create_text_physical_address_annotations():  # noqa: E501
     return res, status
 
 
-def add_annotations(annotations, matches, address_type):
+def add_annotations(annotations, matches, location_type):
     """
-    Converts matches to TextPhysicalAddressAnnotation objects and adds them
+    Converts matches to TextLocationAnnotation objects and adds them
     to the annotations array specified.
     """
     for match in matches:
         annotations.append(
-            TextPhysicalAddressAnnotation(
+            TextLocationAnnotation(
                 start=match.start(),
                 length=len(match[0]),
                 text=match[0],
-                address_type=address_type,
+                location_type=location_type,
                 confidence=95.5
             ))
